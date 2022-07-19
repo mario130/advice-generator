@@ -4,12 +4,10 @@ import counterReducer, {
 	fetchAdviceAsync
 } from './adviceSlice';
 
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import {Advice} from './Advice'
 import { Provider } from 'react-redux';
 import configureStore from 'redux-mock-store';
-import {useAppDispatch} from '../../app/hooks'
-
 
 describe('advice reducer', () => {
 	const mockStore = configureStore();
@@ -28,20 +26,11 @@ describe('advice reducer', () => {
     });
   });
 
-	// it('should handle fetchAdviceAsync', () => {
-	// 	const actual = adviceSlice.reducer(initialState, fetchAdviceAsync());
-
-	// })
-
   // it('should handle fetch advice', () => {
 	// 	store = mockStore(initialState);
-	// 	render(
-	// 		<Provider store={store}>
-	// 			<Advice />
-	// 		</Provider>
-	// 	);
+	// 	const actual = adviceSlice.reducer(initialState, fetchAdviceAsync());
+	// 	expect(actual.advice).not.toEqual('');
 
-  //   const actual = counterReducer(initialState, fetchAdviceAsync());
-  //   expect(actual.value).toEqual(5);
+	// 	expect(screen.getByRole('button')).toBeInTheDocument();
   // });
 });
