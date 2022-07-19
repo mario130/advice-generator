@@ -35,7 +35,7 @@ export function Advice() {
 	const isMobile = width <= 768;
 
 	return (
-		<div className='m-auto bg-secondary-light rounded-xl p-6 max-w-sm text-white flex flex-col justify-center items-center transition-all relative duration-500'>
+		<div className='m-auto bg-secondary-light rounded-xl p-6 w-80 text-white flex flex-col justify-center items-center transition-all relative duration-500'>
 			<div className='flex space-x-2 items-center'>
 				<p className='uppercase tracking-widest text-primary text-xs font-semibold'>Advice #{id}</p>
 			</div>
@@ -49,7 +49,7 @@ export function Advice() {
 				}}
 				animationType="blocks"
 				interval={0.01}
-				duration={0.2}
+				duration={0.4}
 				tag="p"
 				className="animated-paragraph p-4 text-xl font-bold text-center leading-7"
 				includeWhiteSpaces
@@ -60,13 +60,13 @@ export function Advice() {
 			</AnimatedText>
 
 			{/* br */}
-			<img className='mb-6' src={`/images/pattern-divider-${isMobile ? 'mobile' : 'desktop'}.svg`} alt="" />
+			<img className='mb-6' src={`/advice-generator/images/pattern-divider-${isMobile ? 'mobile' : 'desktop'}.svg`} alt="" />
 			<button
 				className='bg-primary text-secondary font-bold p-4 rounded-full absolute -bottom-7 hover:bg-white transition-all duration-500'
 				onClick={() => dispatch(fetchAdviceAsync())}
 			>
 				{status !== 'loading'
-					? <img src="/images/icon-dice.svg" alt="" />
+					? <img src="/advice-generator/images/icon-dice.svg" alt="" />
 					: <Oval
 						height="19"
 						width="19"
