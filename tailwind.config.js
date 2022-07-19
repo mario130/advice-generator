@@ -36,7 +36,12 @@ module.exports = {
 			'secondary': '#202632',
 			'secondary-light': '#313a49',
 		},
-		extend: {}
+		extend: {
+			transitionProperty: {
+        'height': 'height',
+        'spacing': 'margin, padding',
+      }
+		}
 	},
 	plugins: [],
 }

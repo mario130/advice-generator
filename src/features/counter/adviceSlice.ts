@@ -57,5 +57,6 @@ export const adviceSlice = createSlice({
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.advice)`
 export const selectAdvice = (state: RootState) => state.advice.advice;
 export const selectId = (state: RootState) => state.advice.id;
+export const selectStatus = (state: RootState) => state.advice.status;
 
 export default adviceSlice.reducer;
