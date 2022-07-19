@@ -1,31 +1,47 @@
 import counterReducer, {
+	adviceSlice,
   AdviceState,
+	fetchAdviceAsync
 } from './adviceSlice';
 
-// describe('counter reducer', () => {
-//   const initialState: AdviceState = {
-//     value: 3,
-//     status: 'idle',
-//   };
-//   it('should handle initial state', () => {
-//     expect(counterReducer(undefined, { type: 'unknown' })).toEqual({
-//       value: 0,
-//       status: 'idle',
-//     });
-//   });
+import { render } from '@testing-library/react';
+import {Advice} from './Advice'
+import { Provider } from 'react-redux';
+import configureStore from 'redux-mock-store';
+import {useAppDispatch} from '../../app/hooks'
 
-//   it('should handle increment', () => {
-//     const actual = counterReducer(initialState, increment());
-//     expect(actual.value).toEqual(4);
-//   });
 
-//   it('should handle decrement', () => {
-//     const actual = counterReducer(initialState, decrement());
-//     expect(actual.value).toEqual(2);
-//   });
+describe('advice reducer', () => {
+	const mockStore = configureStore();
+  const initialState: AdviceState = {
+		id: 0,
+		advice: '',
+		status: 'idle'
+	};
+	let store;
 
-//   it('should handle incrementByAmount', () => {
-//     const actual = counterReducer(initialState, incrementByAmount(2));
-//     expect(actual.value).toEqual(5);
-//   });
-// });
+  it('should handle initial state', () => {
+    expect(counterReducer(undefined, { type: 'unknown' })).toEqual({
+			id: 0,
+			advice: '',
+      status: 'idle',
+    });
+  });
+
+	// it('should handle fetchAdviceAsync', () => {
+	// 	const actual = adviceSlice.reducer(initialState, fetchAdviceAsync());
+
+	// })
+
+  // it('should handle fetch advice', () => {
+	// 	store = mockStore(initialState);
+	// 	render(
+	// 		<Provider store={store}>
+	// 			<Advice />
+	// 		</Provider>
+	// 	);
+
+  //   const actual = counterReducer(initialState, fetchAdviceAsync());
+  //   expect(actual.value).toEqual(5);
+  // });
+});

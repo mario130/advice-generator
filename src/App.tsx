@@ -11,8 +11,7 @@ function App() {
 	}, [])
 	
   return (
-    <div>
-			Hello there!
+    <div className='App bg-secondary h-screen flex align-middle justify-center'>
 			<Advice />
 		</div>
   );

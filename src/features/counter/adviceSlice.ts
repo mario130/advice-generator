@@ -55,7 +55,7 @@ export const adviceSlice = createSlice({
 // The function below is called a selector and allows us to select a advice from
 // the state. Selectors can also be defined inline where they're used instead of
 // in the slice file. For example: `useSelector((state: RootState) => state.counter.advice)`
-export const selectCount = (state: RootState) => state.advice.advice;
+export const selectAdvice = (state: RootState) => state.advice.advice;
 export const selectId = (state: RootState) => state.advice.id;
 
 export default adviceSlice.reducer;
